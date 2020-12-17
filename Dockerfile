@@ -26,3 +26,6 @@ RUN chmod +x /start.sh
 
 # define execution entrypoint
 ENTRYPOINT ["/start.sh"]
+
+# start n8n
+CMD ["n8n"]
