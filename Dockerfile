@@ -28,4 +28,4 @@ RUN chmod +x /start.sh
 ENTRYPOINT ["/start.sh"]
 
 # start n8n
-CMD ["n8n"]
+CMD ["n8n", "2>&1"]
