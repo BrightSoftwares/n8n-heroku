@@ -25,7 +25,4 @@ COPY ./start.sh /
 RUN chmod +x /start.sh
 
 # define execution entrypoint
-ENTRYPOINT ["/start.sh"]
-
-# start n8n
-CMD ["n8n", "2>&1"]
+CMD ["/start.sh"]
