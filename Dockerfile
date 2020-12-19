@@ -9,24 +9,13 @@ RUN apk add --update graphicsmagick tzdata
 # Set a custom user to not have n8n run as root
 USER root
 
+# Specifying work directory
+WORKDIR /data 
+
 # Install n8n and the also temporary all the packages
 # it needs to build it correctly.
-RUN apk --update add --virtual build-dependencies python build-base && \
-	npm_config_user=root npm install -g n8n@${N8N_VERSION} n8n-nodes-dnc-suitecrm && \
-	apk del build-dependencies
-
-#CMD ["npm", "list"]
-#RUN ["npm", "list"]
-#RUN ["npm", "list", "-g" "--depth=0"]
-
-# Specifying work directory
-WORKDIR /data
-
-#RUN npm_config_user=root npm install n8n-nodes-dnc-suitecrm
-#RUN npm install n8n n8n-nodes-dnc-suitecrm
-
-#RUN ["npm", "list"]
-#RUN ["npm", "list", "-g" "--depth=0"]
+RUN apk --update add --virtual build-dependencies python build-base 
+RUN npm install n8n@${N8N_VERSION} n8n-nodes-dnc-suitecrm
 
 # copy start script to container
 COPY ./start.sh /

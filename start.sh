@@ -59,4 +59,4 @@ else
 fi
 
 # kickstart nodemation
-n8n
+npx n8n
