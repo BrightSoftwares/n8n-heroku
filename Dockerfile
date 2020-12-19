@@ -12,21 +12,20 @@ USER root
 # Install n8n and the also temporary all the packages
 # it needs to build it correctly.
 RUN apk --update add --virtual build-dependencies python build-base && \
-	npm_config_user=root npm install -g n8n@${N8N_VERSION} n8n-nodes-dnc-suitecrm
-# && \
-#	apk del build-dependencies
+	npm_config_user=root npm install -g n8n@${N8N_VERSION} n8n-nodes-dnc-suitecrm && \
+	apk del build-dependencies
 
-CMD ["npm", "list"]
-RUN ["npm", "list"]
+#CMD ["npm", "list"]
+#RUN ["npm", "list"]
 #RUN ["npm", "list", "-g" "--depth=0"]
 
 # Specifying work directory
 WORKDIR /data
 
 #RUN npm_config_user=root npm install n8n-nodes-dnc-suitecrm
-RUN npm install n8n n8n-nodes-dnc-suitecrm
+#RUN npm install n8n n8n-nodes-dnc-suitecrm
 
-RUN ["npm", "list"]
+#RUN ["npm", "list"]
 #RUN ["npm", "list", "-g" "--depth=0"]
 
 # copy start script to container
