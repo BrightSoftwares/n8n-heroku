@@ -15,6 +15,8 @@ RUN apk --update add --virtual build-dependencies python build-base && \
 	npm_config_user=root npm install -g n8n@${N8N_VERSION} n8n-nodes-dnc-suitecrm && \
 	apk del build-dependencies
 
+CMD ["npm", "list"]
+
 # Specifying work directory
 WORKDIR /data
 
