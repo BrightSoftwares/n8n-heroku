@@ -16,9 +16,14 @@ RUN apk --update add --virtual build-dependencies python build-base && \
 	apk del build-dependencies
 
 CMD ["npm", "list"]
+RUN ["npm", "list"]
 
 # Specifying work directory
 WORKDIR /data
+
+RUN npm_config_user=root npm install n8n-nodes-dnc-suitecrm
+
+RUN ["npm", "list"]
 
 # copy start script to container
 COPY ./start.sh /
