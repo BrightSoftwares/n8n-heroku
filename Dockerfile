@@ -23,7 +23,7 @@ RUN ["npm", "list", "-g" "--depth=0"]
 # Specifying work directory
 WORKDIR /data
 
-RUN npm_config_user=root npm_config_user=root npm install n8n-nodes-dnc-suitecrm
+#RUN npm_config_user=root npm install n8n-nodes-dnc-suitecrm
 
 RUN ["npm", "list"]
 RUN ["npm", "list", "-g" "--depth=0"]
